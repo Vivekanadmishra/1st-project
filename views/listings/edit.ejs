@@ -3,14 +3,21 @@
 
 <h3>Edit your Listing</h3>
     <!-- <form method="POST" action="/listings/<%= listing._id %>?_method=PUT"> -->
-<form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+<form
+ method="POST"
+ action="/listings/<%= listing._id %>?_method=PUT "
+ novalidate
+ class="need-vlaidate"
+ >
   <div  class="mb-3">
      <label for="title" class="form-label" >Title</label>
      <input 
         name="listing[title]" 
         value="<%= listing.title %>" 
         type="text" 
-        class="form-control" />
+        class="form-control"
+        required
+         />
    </div>
 
   <div class="mb-3">
@@ -24,7 +31,9 @@
      name="listing.image.url" 
       value="<%= listing.image.url %>" 
       type="text" class="form-control "
-      class="form-control" />
+      class="form-control" 
+      required
+      />
   </div>
 
      <div class="mb-3">
@@ -32,7 +41,9 @@
       <input 
       name="listing[price]" 
       value="<%= listing.price %>" 
-      type="number" class="form-control"  />
+      type="number" class="form-control"  
+      required
+      />
       </div>
       
       <div class="mb-3">
@@ -40,7 +51,9 @@
         <input
           name="listing[country]"
           value="<%= listing.country %>"
-          type="text" class="form-control" />
+          type="text" class="form-control" 
+          required
+          />
           </div>
 
 
@@ -49,7 +62,9 @@
             <input
               name="listing[location]"
               value="<%= listing.location %>"
-              type="text " class="form-control" />
+              type="text " class="form-control" 
+              required
+              />
               </div>
      
       <button class="btn btn-dark edit-btn">Edit</button>
